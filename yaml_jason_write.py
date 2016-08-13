@@ -35,12 +35,12 @@ def main():
     ]
 
 	with open(yaml_file, "w") as f:
-		f.Write(yaml.dump(my_list, default_flow_style=False))
+		f.write(yaml.dump(my_list, default_flow_style=False))
 
 	with open(json_file, "w") as f:
 		json.dump(my_list, f)
 
-if __name__ == "__name__":
+if __name__ == "__main__":
 	main()
 
 
