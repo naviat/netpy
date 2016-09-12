@@ -50,7 +50,7 @@ class TelnetConn(object):
 		return self.remote_conn.read_very_eager()
 
 
-	def disable_paging(self, paging_cmd'terminal length 0'):
+	def disable_paging(self, paging_cmd='terminal length 0'):
 		'''
 		disable the paging of output
 		'''
