@@ -38,7 +38,7 @@ class TelnetConn(object):
 		time.sleep(1)
 		return output
 
-	def send_command(self, cmd="\n", skeep_time=1):
+	def send_command(self, cmd="\n", sleep_time=1):
 		'''
 		send command over telnet
 		return response
