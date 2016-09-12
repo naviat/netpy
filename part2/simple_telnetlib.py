@@ -40,7 +40,7 @@ def main():
 	'''
 	ip_addr = raw_input("IP address: ")
 	ip_addr = ip_addr.strip()
-	username 'pyclass'
+	username = 'pyclass'
 	password = getpass.getpass()
 
 	remote_conn = telnet_connect(ip_addr)
