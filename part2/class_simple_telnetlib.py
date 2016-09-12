@@ -84,8 +84,8 @@ def main():
 	print output
 	print "\n\n"
 
-	remote_conn.close()
-
+	my_conn.close_conn()
+	
 if __name__ == "__main__":
 	main()
 
