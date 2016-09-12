@@ -17,7 +17,7 @@ class TelnetConn(object):
 	'''
 	Establish telnet connection to network device
 	'''
-	def __int__(self, ip_addr, username, password):
+	def __init__(self, ip_addr, username, password):
 		self.ip_addr = ip_addr
 		self.username = username
 		self.password = password
