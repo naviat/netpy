@@ -21,7 +21,7 @@ def main():
 	for a_device in (pynet_rtr1, pynet_rtr2):
 		print "\n******************"
 		for the_old in (SYS_NAME, SYS_DESCR):
-			snmp_data = snmp_helper.snmp_get_old(a_device, old=the_old)
+			snmp_data = snmp_helper.snmp_get_oid(a_device, oid=the_oid)
 			output = snmp_helper.snmp_extract(snmp_data)
 
 			print output
