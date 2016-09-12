@@ -32,6 +32,22 @@ def telnet_connect(ip_addr):
 	except socket.timeout:
 		sys.exit("Connection refused")
 
+def login(remote_conn, username, password):
+    '''
+    Login to network device
+    '''
+    output = remote_conn.read_until("sername:", TELNET_TIMEOUT)
+    remote_conn.write(username + '\n')
+    output += remote_conn.read_until("ssword:", TELNET_TIMEOUT)
+    remote_conn.write(password + '\n')
+    return output
+
+def disable_paging(remote_conn, paging_cmd='terminal length 0'):
+    '''
+    Disable the paging of output (i.e. --More--)
+    '''
+    return send_command(remote_conn, paging_cmd)
+
 
 def main():
 	'''
