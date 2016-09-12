@@ -64,8 +64,6 @@ class TelnetConn(object):
 		self.remote_conn.close()
 
 
-
-
 def main():
 	'''
 	Script that connects to router and runs 
@@ -76,14 +74,11 @@ def main():
 	username = 'pyclass'
 	password = getpass.getpass()
 
-	remote_conn = telnet_connect(ip_addr)
-	output = login(remote_conn, username, password)
-
-	time.sleep(1)
-	remote_conn.read_very_eager()
-	disable_paging(remote_conn)
-
-	output = send_command(remote_conn, 'show ip int brief')
+    my_conn = TelnetConn(ip_addr, username, password)
+    my_conn.login()
+    my_conn.send_command()
+    my_conn.disable_paging()
+    output = my_conn.send_command('show ip int brief')
 
 	print "\n\n"
 	print output
