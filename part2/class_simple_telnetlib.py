@@ -74,11 +74,11 @@ def main():
 	username = 'pyclass'
 	password = getpass.getpass()
 
-    my_conn = TelnetConn(ip_addr, username, password)
-    my_conn.login()
-    my_conn.send_command()
-    my_conn.disable_paging()
-    output = my_conn.send_command('show ip int brief')
+	my_conn = TelnetConn(ip_addr, username, password)
+	my_conn.login()
+	my_conn.send_command()
+	my_conn.disable_paging()
+	output = my_conn.send_command('show ip int brief')
 
 	print "\n\n"
 	print output
