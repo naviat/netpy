@@ -24,7 +24,7 @@ class TelnetConn(object):
 
 		try:
 			self.remote_conn = telnetlib.Telnet(self.ip_addr, TELNET_PORT, TELNET_TIMEOUT)
-		except
+		except socket.timeout:
 			sys.exit("Connection timeout")
 
 	def login(self):
